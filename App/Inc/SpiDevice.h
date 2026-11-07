@@ -11,9 +11,9 @@
 
 typedef struct
 {
-    void (*readData)(void* ctx, uint8_t* data_rx, uint8_t reg, uint8_t length);
-    void (*writeData)(void* ctx, uint8_t* data_tx, uint8_t reg, uint8_t length);
-    void (*transferDone)(void* ctx);
+    void (*readData)(int* DMAStatus, uint8_t* data_rx, uint8_t reg, uint8_t length);
+    void (*writeData)(int* DMAStatus, uint8_t* data_tx, uint8_t reg, uint8_t length);
+    void (*transferDone)(int* DMAStatus);
     int* TransferStatus;
 } SPIDevice_t;
 
